@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Recipe} from "../../models/recipe";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Recipe} from '../../models/recipe';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
@@ -21,11 +21,11 @@ export class RecipeComponent implements OnInit {
     {
       id: 2,
       name: 'Солянка',
-      ingredients: 'Колбаса копченая, сосиски, говядина вареная, бульонные кубики, вода, лук репчатый, масло растительное, томат пюре, маслины, сметана, огурцы маринованые'
+      ingredients: 'Колбаса копченая, сосиски, говядина вареная, бульонные кубики, вода, лук репчатый'
     }
   ];
 
-  data:FormGroup = null;
+  data: FormGroup = null;
 
 
   constructor() {
@@ -42,6 +42,12 @@ export class RecipeComponent implements OnInit {
         )
       }
     );
+
+    window.onkeyup = (key) => {
+      if (key.key === 'Escape') {
+        this.isOpenDialog = false;
+      }
+    };
   }
 
   openDialog() {

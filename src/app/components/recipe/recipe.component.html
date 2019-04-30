@@ -3,11 +3,13 @@
   <div class="row wrapper">
     <div class="recipe">
       <ng-container *ngFor="let recipe of recipes">
-        <app-recipe-box
-          [recipe]="recipe"
-          (deleteItem)="deleteRecipe($event)"
-          (updateItem)="updateRecept($event)"
-        ></app-recipe-box>
+        <div class="recipe-item">
+          <app-recipe-box
+            [recipe]="recipe"
+            (deleteItem)="deleteRecipe($event)"
+            (updateItem)="updateRecept($event)"
+          ></app-recipe-box>
+        </div>
       </ng-container>
     </div>
   </div>

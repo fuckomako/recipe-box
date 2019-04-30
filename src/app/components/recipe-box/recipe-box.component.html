@@ -1,9 +1,15 @@
+<!--<div (click)="testBool = !testBool">-->
+<!--  privet-->
+<!--  <div *ngIf="testBool" [@testAnim]>-->
+<!--    i'm hidden-->
+<!--  </div>-->
+<!--</div>-->
 <div class="recipe-box">
   <div class="recipe-box-header"
        (click)="openRecipe()">
     {{recipe.name}}
   </div>
-  <ng-container *ngIf="isOpenRecipe">
+  <div class="accordeon" [@recipeBlock] *ngIf="isOpenRecipe">
     <div class="recipe-box-hidden">
       <div class="recipe-box-hidden-header text-center">Состав</div>
       <div class="recipe-box-text">
@@ -24,7 +30,7 @@
         </button>
       </div>
     </div>
-  </ng-container>
+  </div>
 </div>
 
 <ng-container *ngIf="isEditDialog">
